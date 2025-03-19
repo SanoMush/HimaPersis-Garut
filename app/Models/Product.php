@@ -17,7 +17,7 @@ class Product extends Model
         'name',
     ];
 
-    public function keypoints(){
-        return $this->hasMany(CompanyKeyPoint::class);
+    public function appointments(){
+        return $this->hasMany(Appointment::class);
     }
 }
