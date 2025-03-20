@@ -12,7 +12,7 @@ class ProjectClient extends Model
 
     protected $fillable =[
         'name',
-        'occapation',
+        'occupations',
         'avatar',
         'logo',
     ];
