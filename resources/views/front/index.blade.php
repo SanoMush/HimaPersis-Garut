@@ -1,0 +1,1 @@
+<p>ini adalah halaman index</p>
