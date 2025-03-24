@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Manage Hero Sections') }}
             </h2>
-            <a href="{{route('admin.hero_section.create')}} " class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+            <a href="{{route('admin.hero_sections.create')}} " class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                 Add New
             </a>
         </div>
