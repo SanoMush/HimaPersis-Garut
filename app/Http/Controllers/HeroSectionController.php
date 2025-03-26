@@ -32,7 +32,7 @@ class HeroSectionController extends Controller
      */
     public function store(StoreHeroSectionRequest $request)
     {
-        //
+        //Input Data
     }
 
     /**
