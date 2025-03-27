@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStatisticRequest;
 use App\Models\CompanyStatistic;
+use Faker\Provider\ar_EG\Company;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
 
 class CompanyStatisticController extends Controller
 {
@@ -32,7 +35,20 @@ class CompanyStatisticController extends Controller
      */
     public function store(StoreStatisticRequest $request)
     {
-        //Insert the data
+        //Insert data to database
+        //clouser-based transaction
+        DB::transaction(function () use ($request){
+            $validated = $request->validated();
+
+            if($request->hasFile('icon')){
+                $iconPath = $request->file('icon')->store('icons','public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $newDataRecord = CompanyStatistic::create($validated);
+        });
+
+        return redirect()->route('admin.statistics.index');
     }
 
     /**

@@ -25,7 +25,7 @@ class StoreHeroSectionRequest extends FormRequest
             //
             'heading' => ['required', 'string', 'max:255'],
             'achievement' => ['required', 'string', 'max:255'],
-            'sub_heading' => ['required', 'string', 'max:255'],
+            'subheading' => ['required', 'string', 'max:255'],
             'path_video' => ['required', 'string', 'max:255'],
             'banner' => ['required', 'image', 'mimes:jpeg,png,jpg'],
         ];
