@@ -81,5 +81,10 @@ class CompanyStatisticController extends Controller
     public function destroy(CompanyStatistic $companyStatistic)
     {
         //
+        DB::transaction(function () use ($companyStatistic){
+            $companyStatistic->delete();
+        });
+
+        return redirect()->route('admin.statistics.index');
     }
 }
