@@ -86,6 +86,6 @@ class OurPrincipleController extends Controller
             $principle->delete();
         });
 
-        return redirect()->route('admin.principle.index');
+        return redirect()->route('admin.principles.index');
     }
 }
