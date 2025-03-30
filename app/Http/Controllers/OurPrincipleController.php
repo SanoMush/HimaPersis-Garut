@@ -43,7 +43,7 @@ class OurPrincipleController extends Controller
             }
             if($request->hasFile('thumbnail')){
                 $thumbnailPath = $request->file('thumbnail')->store('thumbnails','public');
-                $validated['icon'] = $thumbnailPath;
+                $validated['thumbnail'] = $thumbnailPath;
             }
 
             $newPrinciple = OurPrinciple::create($validated);
@@ -63,9 +63,10 @@ class OurPrincipleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurPrinciple $ourPrinciple)
+    public function edit(OurPrinciple $principle)
     {
         //
+        return view('admin.principles.edit', compact('principle'));
     }
 
     /**

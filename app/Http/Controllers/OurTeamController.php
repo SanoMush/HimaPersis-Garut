@@ -59,9 +59,10 @@ class OurTeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurTeam $ourTeam)
+    public function edit(OurTeam $team)
     {
         //
+        return view('admin.teams.edit', compact('team'));
     }
 
     /**
@@ -75,11 +76,11 @@ class OurTeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OurTeam $ourTeam)
+    public function destroy(OurTeam $team)
     {
         //
-        DB::transaction(function () use ($ourTeam){
-            $ourTeam->delete();
+        DB::transaction(function () use ($team){
+            $team->delete();
         });
 
         return redirect()->route('admin.teams.index');
