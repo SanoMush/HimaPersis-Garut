@@ -79,13 +79,7 @@ class CompanyAboutController extends Controller
     {
         //
         DB::transaction(function () use ($request, $about){
-            $validated = $request->validate([
-                'title' => 'required|string|max:255',
-                'description' => 'required|string',
-                'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'keypoints' => 'nullable|array',
-                'keypoints.*' => 'string|max:255',
-            ]);
+            $validated = $request->validated();
 
             if($request->hasFile('thumbnail')){
                 $thumbnailPath = $request->file('thumbnail')->store('thumbnails','public');
@@ -95,10 +89,11 @@ class CompanyAboutController extends Controller
             $about->update($validated);
 
             if(!empty($validated['keypoints'])){
+                $about->keypoints()->delete();
                 foreach ($validated['keypoints'] as $keypoint){
                     $about->keypoints()->create(['keypoint' => $keypoint]);
                 }
-            }
+            }   
         });
 
         return redirect()->route('admin.abouts.index');

@@ -17,7 +17,7 @@
                 @endforeach
             @endif
 
-                <form method="POST" action="{{route('admin.hero_sections.update',$heroSection)}}" enctype="multipart/form-data"> 
+                <form method="POST" action="{{route('admin.hero_sections.update',$heroSection)}}" enctype="multipart/form-data" onsubmit="console.log('Form submitted');"> 
                     @csrf
                     @method('PUT')
                     <div>
@@ -30,7 +30,7 @@
                     <div class="mt-4">
                         <x-input-label for="banner" :value="__('banner')" />
                         <img src="{{Storage::url($heroSection->banner)}} " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
-                        <x-text-input id="banner" class="block mt-1 w-full" type="file" name="banner" required autofocus autocomplete="banner" />
+                        <x-text-input id="banner" class="block mt-1 w-full" type="file" name="banner"  autofocus autocomplete="banner" />
                         <x-input-error :messages="$errors->get('banner')" class="mt-2" />
                     </div>
 
@@ -57,7 +57,7 @@
 
                     <div class="flex items-center justify-end mt-4">
             
-                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full" onclick="this.form.submit()">
                             Update Hero Section
                         </button>
                     </div>

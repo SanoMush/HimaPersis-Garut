@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateHeroSectionRequest;
 use App\Models\HeroSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class HeroSectionController extends Controller
 {
@@ -72,7 +73,7 @@ class HeroSectionController extends Controller
      */
     public function update(UpdateHeroSectionRequest $request, HeroSection $heroSection)
     {
-        //
+        
         DB::transaction(function () use ($request, $heroSection){
             $validated = $request->validated();
 
