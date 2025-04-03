@@ -17,7 +17,7 @@
                 @endforeach
             @endif
 
-                <form method="POST" action="{{route('admin.hero_sections.update',$heroSection)}}" enctype="multipart/form-data" onsubmit="console.log('Form submitted');"> 
+                <form method="POST" action="{{route('admin.hero_sections.update',$heroSection)}}" enctype="multipart/form-data"> 
                     @csrf
                     @method('PUT')
                     <div>
@@ -57,7 +57,7 @@
 
                     <div class="flex items-center justify-end mt-4">
             
-                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full" onclick="this.form.submit()">
+                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Update Hero Section
                         </button>
                     </div>
