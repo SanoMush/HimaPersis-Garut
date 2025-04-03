@@ -86,7 +86,8 @@ class HeroSectionController extends Controller
         });
 
         return redirect()->route('admin.hero_sections.index');
-    }
+
+     }
 
     /**
      * Remove the specified resource from storage.
