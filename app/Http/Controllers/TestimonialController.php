@@ -99,6 +99,6 @@ class TestimonialController extends Controller
             $testimonial->delete();
         });
 
-        return redirect()->route('admin.statistics.index');
+        return redirect()->route('admin.testimonials.index');
     }
 }

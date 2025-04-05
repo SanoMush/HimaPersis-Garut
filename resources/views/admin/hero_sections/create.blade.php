@@ -41,11 +41,11 @@
                         <x-input-error :messages="$errors->get('achievement')" class="mt-2" />
                     </div>
 
-                    <div class="mt-4">
+                    <!-- <div class="mt-4">
                         <x-input-label for="path_video" :value="__('path_video')" />
                         <x-text-input id="path_video" class="block mt-1 w-full" type="text" name="path_video" :value="old('path_video')" required autofocus autocomplete="path_video" />
                         <x-input-error :messages="$errors->get('path_video')" class="mt-2" />
-                    </div>
+                    </div> -->
 
                     <div class="flex items-center justify-end mt-4">
             
