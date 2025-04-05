@@ -6,7 +6,7 @@
         <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
             <div class="flex items-center gap-3">
                 <div class="flex shrink-0 h-[43px] overflow-hidden">
-                    <img src="{{asset('assets/logo/logo.svg')}}" class="object-contain w-full h-full" alt="logo">
+                    <img src="{{asset('assets/logo/pd.svg')}}" class="object-contain w-full h-full" alt="logo">
                 </div>
                 <div class="flex flex-col">
                   <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Hima Persis Garut</p>
@@ -18,10 +18,10 @@
                 <a href="index.html">Home</a>
               </li>
               <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="">Products</a>
+                <a href="">Project</a>
               </li>
               <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="">Company</a>
+                <a href="">Organization</a>
               </li>
               <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
                 <a href="">Blog</a>
@@ -58,23 +58,39 @@
         </div>
     </div>
     <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-        <img src="{{Storage::url($hero_section->banner)}}" class="object-cover w-full h-full" alt="banner">
-    </div>
-    @empty
+    <img src="{{ Storage::url($hero_section->banner) }}" class="object-cover w-full h-full" alt="banner">\
+   
+</div>
+@empty
     <p>Belum ada data terbaru</p>
     @endforelse
-  </div>
+</div>
   <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
+    <h2 class="font-bold text-lg">Pimpinan Komisariat Hima Persis Garut</h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-54.svg')}}" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/ipi.svg')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-52.svg')}}" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/uniga.svg')}}" class="object-contain w-full h-full" alt="logo">
+        </div>
+      </div>
+      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+        <div class="overflow-hidden h-9">
+          <img src="{{asset('assets/logo/iai.svg')}}" class="object-contain w-full h-full" alt="logo">
+        </div>
+      </div>
+      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+        <div class="overflow-hidden h-9">
+          <img src="{{asset('assets/logo/unipi.svg')}}" class="object-contain w-full h-full" alt="logo">
+        </div>
+      </div>
+      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+        <div class="overflow-hidden h-9">
+          <img src="{{asset('assets/logo/logo-51.svg')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
@@ -84,32 +100,7 @@
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-44.svg')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-51.svg')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-55.svg')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
           <img src="{{asset('assets/logo/logo-52.svg')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-54.svg')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/logo-51.svg')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
     </div>
@@ -117,11 +108,12 @@
   <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
-        <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice <br> For Your Company</h2>
+        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PROJECT</p>
+        <h2 class="font-bold text-4xl leading-[45px]">Our Projects Rooted in Values<br> Driven by Change </h2>
       </div>
       <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
+    
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
       @forelse($principles as $principle)
@@ -166,6 +158,11 @@
     </div>
   </div>
   <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+  <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
+      <div class="flex flex-col gap-[14px] items-center">
+        <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
+        <h2 class="font-bold text-4xl leading-[45px] text-center">ILMIAH PROGRESIF REVOLUSIONER</h2>
+      </div>
 
       @forelse($products as $product)
 
@@ -382,34 +379,26 @@
       <div class="flex flex-col gap-10">
         <div class="flex items-center gap-3">
           <div class="flex shrink-0 h-[43px] overflow-hidden">
-              <img src="{{asset('assets/logo/logo.svg')}}" class="object-contain w-full h-full" alt="logo">
+              <img src="assets/logo/pd.svg" class="object-contain w-full h-full" alt="logo">
           </div>
           <div class="flex flex-col">
             <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">Hima Persis Garut</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Ilmiah, Progresif, Revolusioner</p>
+            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Ilmiah Progresif Revolusioner</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{asset('assets/icons/youtube.svg')}}" class="w-full h-full object-contain" alt="youtube">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{asset('assets/icons/whatsapp.svg')}}" class="w-full h-full object-contain" alt="whatsapp">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{asset('assets/icons/facebook.svg')}}" class="w-full h-full object-contain" alt="facebook">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{asset('assets/icons/instagram.svg')}}" class="w-full h-full object-contain" alt="instagram">
-            </div>
-          </a>
+        <a href="https://www.youtube.com/@himapersisgarut7731" target="_blank">
+  <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+    <img src="assets/icons/youtube.svg" class="w-full h-full object-contain" alt="youtube">
+  </div>
+</a>
+
+<a href="https://www.instagram.com/himapersis_garut/" target="_blank">
+  <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+    <img src="assets/icons/instagram.svg" class="w-full h-full object-contain" alt="instagram">
+  </div>
+</a>
+
         </div>
       </div>
       <div class="flex flex-wrap gap-[50px]">
@@ -437,7 +426,7 @@
       </div>
     </div>
     <div class="absolute -bottom-[135px] w-full">
-      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">INTEGRITAS</p>
+      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">HimaPersis</p>
     </div>
   </footer>
   <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
