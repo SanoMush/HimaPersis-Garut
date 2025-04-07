@@ -225,8 +225,8 @@
   </div>
   <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
     <div class="flex flex-col gap-[14px] items-center">
-      <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
-      <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
+      <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">Voice of Our Members</p>
+      <h2 class="font-bold text-4xl leading-[45px] text-center">Inspirasi dan refleksi dari para kader Hima Persis yang terus bergerak dengan<br>Semangat keilmuan, progresivitas, dan semangat perubahan.</h2>
     </div>
     <div class="main-carousel w-full">
 
@@ -269,7 +269,7 @@
 
     </div>
   </div>
-  <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+  <!-- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">
         <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
@@ -315,8 +315,8 @@
         <p class="text-cp-light-grey">Bandung, 2023</p>
       </div>
     </div>
-  </div>
-  <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
+  </div> -->
+  <!-- <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
     <div class="container max-w-[1000px] mx-auto">
       <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
           <div class="flex flex-col gap-[30px]">
@@ -373,7 +373,7 @@
           </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
       <div class="flex flex-col gap-10">
