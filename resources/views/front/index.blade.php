@@ -181,6 +181,8 @@
     @empty
     <p>Belum ada data terbaru</p>
     @endforelse
+  </div>
+  </div>
   <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
       <div class="flex flex-col gap-[14px] items-center">
@@ -269,7 +271,8 @@
 
     </div>
   </div>
-  <!-- <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+  
+ <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">
         <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
@@ -315,8 +318,8 @@
         <p class="text-cp-light-grey">Bandung, 2023</p>
       </div>
     </div>
-  </div> -->
-  <!-- <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
+  </div> 
+ <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
     <div class="container max-w-[1000px] mx-auto">
       <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
           <div class="flex flex-col gap-[30px]">
@@ -373,7 +376,7 @@
           </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
       <div class="flex flex-col gap-10">
@@ -426,7 +429,7 @@
       </div>
     </div>
     <div class="absolute -bottom-[135px] w-full">
-      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">HimaPersis</p>
+      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BERINTEGRITAS</p>
     </div>
   </footer>
   <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
