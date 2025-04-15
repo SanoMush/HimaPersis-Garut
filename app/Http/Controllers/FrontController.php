@@ -26,6 +26,7 @@ class FrontController extends Controller
 
     public function team(){
         $teams = OurTeam::take(16)->get();
-        return view('front.team', compact('teams'));
+        $statistics = CompanyStatistic::take(4)->get();
+        return view('front.team', compact('teams','statistics'));
     }
 }

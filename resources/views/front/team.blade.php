@@ -3,35 +3,7 @@
 
 <div id="header" class="bg-[#F6F7FA] relative h-[600px] -mb-[388px]">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
-        <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
-            <div class="flex items-center gap-3">
-                <div class="flex shrink-0 h-[43px] overflow-hidden">
-                    <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-                <div class="flex flex-col">
-                  <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">ShaynaComp</p>
-                  <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
-                </div>
-            </div>
-            <ul class="flex flex-wrap items-center gap-[30px]">
-              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="index.html">Home</a>
-              </li>
-              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="">Products</a>
-              </li>
-              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="">Company</a>
-              </li>
-              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="">Blog</a>
-              </li>
-              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                <a href="about.html">About</a>
-              </li>
-            </ul>
-            <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get a Quote</a>
-        </nav>
+<x-navbar/>
     </div>
   </div>
   <div id="Teams" class="w-full px-[10px] relative z-10">
@@ -71,6 +43,25 @@
     </div>
   </div>
 
+  <div id="Stats" class="bg-cp-black w-full mt-20">
+    <div class="container max-w-[1000px] mx-auto py-10">
+      <div class="flex flex-wrap items-center justify-between p-[10px]">
+
+        @forelse($statistics as $statistic)
+        <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
+          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+            <img src="{{Storage::url($statistic->icon)}}" class="object-contain w-full h-full" alt="icon">
+          </div>
+          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">{{$statistic->goal}}</p>
+          <p class="text-cp-light-grey">{{$statistic->name}}</p>
+        </div>
+        @empty
+        <p>Belum ada data terbaru</p>
+        @endforelse
+
+      </div>
+    </div>
+  </div>
   <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
       <div class="flex flex-col gap-10">
