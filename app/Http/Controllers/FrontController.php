@@ -9,7 +9,7 @@ use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
 use App\Models\Testimonial;
-use App\Models\About;
+use App\Models\CompanyAbout;
 
 class FrontController extends Controller
 {
@@ -32,7 +32,7 @@ class FrontController extends Controller
     }
     public function about()
     {
-        $about = About::latest()->first(); 
+        $about = CompanyAbout::latest()->first();
 
    
         return view('front.about', compact('about')); 
