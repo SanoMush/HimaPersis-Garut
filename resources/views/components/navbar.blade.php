@@ -36,8 +36,6 @@
         </li>
     </ul>
 
-    <!-- Desktop CTA Button -->
-    <a href="" class="hidden md:block bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get a Quote</a>
 </nav>
 
 <!-- Mobile Menu Overlay (Hidden by default) -->

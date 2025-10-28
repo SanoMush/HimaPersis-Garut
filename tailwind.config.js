@@ -13,7 +13,14 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', 'sans-serif'] // Font dari layout Anda
             },
+            // INI ADALAH PALET WARNA MAROON BARU KITA
+            colors: {
+                'maroon-dark': '#800000',     // Merah Maroon tua (untuk footer, stats)
+                'maroon-primary': '#B91C1C',  // Merah cerah (untuk tombol, link, aksen)
+                'maroon-light': '#FEE2E2',    // Merah muda/muda (untuk background badge)
+            }
         },
     },
 

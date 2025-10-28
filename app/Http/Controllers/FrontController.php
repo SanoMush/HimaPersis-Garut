@@ -9,6 +9,7 @@ use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
 use App\Models\Testimonial;
+use App\Models\About;
 
 class FrontController extends Controller
 {
@@ -28,5 +29,12 @@ class FrontController extends Controller
         $teams = OurTeam::take(16)->get();
         $statistics = CompanyStatistic::take(4)->get();
         return view('front.team', compact('teams','statistics'));
+    }
+    public function about()
+    {
+        $about = About::latest()->first(); 
+
+   
+        return view('front.about', compact('about')); 
     }
 }
