@@ -43,6 +43,13 @@
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
 
+                    {{-- Input PDF --}}
+                    <div class="mt-4">
+                        <x-input-label for="pdf_file" :value="__('Upload PDF Karya (Opsional)')" />
+                        <x-text-input id="pdf_file" class="block mt-1 w-full" type="file" name="pdf_file" accept=".pdf" /> 
+                        <x-input-error :messages="$errors->get('pdf_file')" class="mt-2" />
+                    </div>
+
                     <div class="flex items-center justify-end mt-4">
                         <button type="submit" class="font-bold py-4 px-6 bg-maroon-primary text-white rounded-full">
                             Publish Article

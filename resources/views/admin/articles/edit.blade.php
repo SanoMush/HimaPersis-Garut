@@ -46,6 +46,20 @@
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
 
+                    {{-- Input PDF --}}
+                    <div class="mt-4">
+                        <x-input-label for="pdf_file" :value="__('Upload PDF Karya Baru (Opsional)')" />
+                        {{-- Tampilkan link PDF lama jika ada --}}
+                        @if($article->pdf_path)
+                            <p class="text-sm mt-1 mb-2">PDF saat ini: 
+                                <a href="{{ Storage::url($article->pdf_path) }}" target="_blank" class="text-blue-600 hover:underline">Lihat/Download</a>
+                            </p>
+                        @endif
+                        <x-text-input id="pdf_file" class="block mt-1 w-full" type="file" name="pdf_file" accept=".pdf" />
+                        <p class="text-sm text-gray-500 mt-1">Kosongkan jika tidak ingin mengganti PDF.</p>
+                        <x-input-error :messages="$errors->get('pdf_file')" class="mt-2" />
+                    </div>
+
                     <div class="flex items-center justify-end mt-4">
                         <button type="submit" class="font-bold py-4 px-6 bg-maroon-primary text-white rounded-full">
                             Update Article

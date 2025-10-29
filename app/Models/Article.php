@@ -10,12 +10,13 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
+    'title',
         'thumbnail',
         'content',
-        'slug',    
-        'user_id',  
+        'slug',
+        'user_id',
         'author_name',
+        'pdf_path',
     ];
 
     public function user(): BelongsTo

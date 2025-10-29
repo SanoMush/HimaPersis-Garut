@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str; 
 
+
 class ArticleController extends Controller
 {
     /**
@@ -31,20 +32,25 @@ class ArticleController extends Controller
     /**
      * Menyimpan data baru dari form
      */
-    public function store(StoreArticleRequest $request)
+   public function store(StoreArticleRequest $request)
     {
         $validated = $request->validated();
+
 
         if ($request->hasFile('thumbnail')) {
             $path = $request->file('thumbnail')->store('articles', 'public');
             $validated['thumbnail'] = $path;
         }
 
-        // Buat slug unik dari judul
+        if ($request->hasFile('pdf_file')) {
+            $pdfPath = $request->file('pdf_file')->store('article_pdfs', 'public');
+            $validated['pdf_path'] = $pdfPath;
+        }
+
+
         $validated['slug'] = Str::slug($validated['title']) . '-' . uniqid();
-        
-        // Asumsi migrasi Anda punya 'user_id' untuk tahu siapa penulisnya
         $validated['user_id'] = auth()->id();
+
 
         Article::create($validated);
 
@@ -62,21 +68,29 @@ class ArticleController extends Controller
     /**
      * Meng-update data dari form edit
      */
-    public function update(UpdateArticleRequest $request, Article $article)
+   public function update(UpdateArticleRequest $request, Article $article)
     {
         $validated = $request->validated();
 
+        // Handle Thumbnail Update (Sudah benar)
         if ($request->hasFile('thumbnail')) {
-            // Hapus thumbnail lama jika ada
-            if ($article->thumbnail) {
-                Storage::disk('public')->delete($article->thumbnail);
-            }
+            if ($article->thumbnail) Storage::disk('public')->delete($article->thumbnail);
             $path = $request->file('thumbnail')->store('articles', 'public');
             $validated['thumbnail'] = $path;
         }
 
-        // Update slug jika judul berubah
-        if ($validated['title'] !== $article->title) {
+        // === TAMBAHKAN INI UNTUK PDF UPDATE ===
+        if ($request->hasFile('pdf_file')) {
+            // Hapus PDF lama jika ada
+            if ($article->pdf_path) Storage::disk('public')->delete($article->pdf_path);
+            // Simpan PDF baru
+            $pdfPath = $request->file('pdf_file')->store('article_pdfs', 'public');
+            $validated['pdf_path'] = $pdfPath;
+        }
+        // ===================================
+
+        // Slug Update (Sudah benar)
+        if (isset($validated['title']) && $validated['title'] !== $article->title) {
             $validated['slug'] = Str::slug($validated['title']) . '-' . uniqid();
         }
 
@@ -88,12 +102,14 @@ class ArticleController extends Controller
     /**
      * Menghapus artikel
      */
-    public function destroy(Article $article)
+ public function destroy(Article $article)
     {
-        // Hapus thumbnail dari storage
-        if ($article->thumbnail) {
-            Storage::disk('public')->delete($article->thumbnail);
-        }
+        // Hapus Thumbnail (Sudah benar)
+        if ($article->thumbnail) Storage::disk('public')->delete($article->thumbnail);
+        
+        // === TAMBAHKAN INI UNTUK HAPUS PDF ===
+        if ($article->pdf_path) Storage::disk('public')->delete($article->pdf_path);
+        // ==================================
         
         $article->delete();
         return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil dihapus!');
