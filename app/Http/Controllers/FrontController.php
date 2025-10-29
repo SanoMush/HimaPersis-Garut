@@ -10,6 +10,7 @@ use App\Models\OurTeam;
 use App\Models\Product;
 use App\Models\Testimonial;
 use App\Models\CompanyAbout;
+use App\Models\Article;
 
 class FrontController extends Controller
 {
@@ -32,9 +33,29 @@ class FrontController extends Controller
     }
     public function about()
     {
-        $about = CompanyAbout::latest()->first();
+        $abouts = CompanyAbout::oldest()->get();
+        return view('front.about', compact('abouts')); 
+    }
 
-   
-        return view('front.about', compact('about')); 
+    public function blog()
+    {
+        // Ambil semua artikel, urutkan terbaru, dan paginasi
+        $articles = Article::latest()->paginate(9); 
+        return view('front.blog', compact('articles'));
+    }
+
+    // UNTUK HALAMAN DETAIL (BACA 1 ARTIKEL)
+    public function article_details($slug)
+    {
+        // Cari artikel berdasarkan slug-nya
+        $article = Article::where('slug', $slug)->firstOrFail();
+        
+        // Ambil 3 artikel terbaru lainnya (selain yang ini)
+        $related_articles = Article::where('slug', '!=', $slug)
+                                    ->latest()
+                                    ->take(3)
+                                    ->get();
+
+        return view('front.article_details', compact('article', 'related_articles'));
     }
 }

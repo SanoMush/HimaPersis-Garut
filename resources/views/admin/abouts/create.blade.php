@@ -36,6 +36,7 @@
                             <option value="">Choose type</option>
                             <option value="Visions">Visions</option>
                             <option value="Missions">Missions</option>
+                            <option value="What">What</option>
                         </select>
 
                         <x-input-error :messages="$errors->get('type')" class="mt-2" />

@@ -6,7 +6,8 @@
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10 px-4">
         <x-navbar/>
         
-        @if($about)
+        {{-- Ganti @if($about) menjadi @forelse($abouts as $about) --}}
+        @forelse($abouts as $about)
             <div id="Hero" class="flex flex-col lg:flex-row justify-between items-center gap-10 mt-20 pb-20">
                 
                 {{-- Bagian Kiri: Teks --}}
@@ -19,6 +20,10 @@
                         {{ $about->type }}
                     </p>
 
+                    {{-- 
+                      PENTING: Pastikan model CompanyAbout Anda punya relasi keypoints()
+                      dan model CompanyKeypoint sudah benar.
+                    --}}
                     @if($about->keypoints)
                         <div class="flex flex-col gap-3">
                             @foreach($about->keypoints as $keypoint)
@@ -38,7 +43,13 @@
                     <img src="{{ Storage::url($about->thumbnail) }}" alt="{{ $about->name }}" class="w-full rounded-[20px] object-cover">
                 </div>
             </div>
-        @else
+
+            {{-- Tambahkan garis pemisah jika ini bukan item terakhir --}}
+            @if(!$loop->last)
+                <hr class="border-gray-300">
+            @endif
+
+        @empty
             {{-- Ini jika admin belum input data sama sekali --}}
             <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
                 <h1 class="font-extrabold text-4xl sm:text-[50px] leading-[50px] sm:leading-[65px]">
@@ -48,7 +59,7 @@
                     Konten belum tersedia. Silakan masukkan data di halaman admin.
                 </p>
             </div>
-        @endif
+        @endforelse
     </div>
 </div>
 @endsection

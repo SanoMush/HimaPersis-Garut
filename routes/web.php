@@ -11,12 +11,16 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectClientController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[FrontController::class, 'index'])->name('front.index');
 Route::get('/team',[FrontController::class, 'team'])->name('front.team');
 Route::get('/about',[FrontController::class, 'about'])->name('front.about');
+
+Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
+Route::get('/blog/{slug}', [FrontController::class, 'article_details'])->name('front.article.details');
 
 
 Route::get('/dashboard', function () {
@@ -32,39 +36,43 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function(){
 
         Route::middleware('can:manage statistics')->group(function () {
-            Route::resource('statistics', CompanyStatisticController::class);    
+            Route::resource('statistics', CompanyStatisticController::class);      
         });
     
         Route::middleware('can:manage products')->group(function () {
-            Route::resource('products', ProductController::class);    
+            Route::resource('products', ProductController::class);      
         });
     
         Route::middleware('can:manage principles')->group(function () {
-            Route::resource('principles', OurPrincipleController::class);    
+            Route::resource('principles', OurPrincipleController::class);      
         });
 
         Route::middleware('can:manage testimonials')->group(function () {
-            Route::resource('testimonials', TestimonialController::class);    
+            Route::resource('testimonials', TestimonialController::class);      
         });
 
         Route::middleware('can:manage clients')->group(function () {
-            Route::resource('clients', ProjectClientController::class);    
+            Route::resource('clients', ProjectClientController::class);      
         });
 
         Route::middleware('can:manage teams')->group(function () {
-            Route::resource('teams', OurTeamController::class);    
+            Route::resource('teams', OurTeamController::class);      
         });
 
         Route::middleware('can:manage abouts')->group(function () {
-            Route::resource('abouts', CompanyAboutController::class);    
+            Route::resource('abouts', CompanyAboutController::class);      
         });
 
         Route::middleware('can:manage appointments')->group(function () {
-            Route::resource('appointments', AppointmentController::class);    
+            Route::resource('appointments', AppointmentController::class);      
         });
 
         Route::middleware('can:manage hero sections')->group(function () {
-            Route::resource('hero_sections', HeroSectionController::class);    
+            Route::resource('hero_sections', HeroSectionController::class);      
+        });
+
+        Route::middleware('can:manage articles')->group(function () {
+            Route::resource('articles', ArticleController::class);      
         });
         
 

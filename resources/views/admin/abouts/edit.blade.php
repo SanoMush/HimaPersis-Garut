@@ -40,6 +40,7 @@
                         <select name="type" id="type" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
                             <option value="Visions">Visions</option>
                             <option value="Missions">Missions</option>
+                            <option value="What">What</option>
                         </select>
 
                         <x-input-error :messages="$errors->get('type')" class="mt-2" />
