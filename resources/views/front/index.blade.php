@@ -1,7 +1,6 @@
 @extends('front.layouts.app')
 
 @section('content')
-{{-- Header: Latar belakang diganti menjadi abu-abu sangat muda --}}
 <div id="header" class="bg-gray-50 relative overflow-hidden">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10 px-4">
         <x-navbar/>
@@ -18,7 +17,6 @@
             </div>
             <div class="flex flex-col gap-[10px]">
                 <h1 class="font-extrabold text-4xl sm:text-[50px] leading-[50px] sm:leading-[65px] max-w-[536px]">{{ $hero_section->heading}}</h1>
-                {{-- Teks subjudul diganti ke abu-abu standar --}}
                 <p class="text-gray-600 leading-[30px] max-w-[437px]">{{$hero_section->subheading}}</p>
             </div>
         </div>
@@ -33,11 +31,9 @@
     @endforelse
 </div>
 
-{{-- Clients: Latar belakang putih --}}
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20 px-4">
     <h2 class="font-bold text-lg">Pimpinan Komisariat Hima Persis Garut</h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
-        {{-- Hover border diubah ke maroon --}}
         <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-gray-200 rounded-[18px] p-4 gap-[10px] bg-white hover:border-maroon-primary transition-all duration-300">
             <div class="overflow-hidden h-9">
                 <img src="{{asset('assets/logo/ipi.svg')}}" class="object-contain w-full h-full" alt="logo">
@@ -76,21 +72,17 @@
     </div>
 </div>
 
-{{-- Our Principles: Latar belakang putih --}}
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20 px-4">
     <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
         <div class="flex flex-col gap-[14px]">
-            {{-- Badge diubah ke warna maroon muda --}}
             <p class="badge w-fit bg-maroon-light text-maroon-dark p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PROJECT</p>
             <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px]">Our Projects Rooted in Values<br class="hidden sm:inline"> Driven by Change </h2>
         </div>
-        {{-- Tombol diubah ke maroon --}}
         <a href="" class="bg-maroon-primary p-[14px_20px] w-fit rounded-xl font-bold text-white shrink-0 hover:opacity-90 transition-opacity duration-300">Explore More</a>
     </div>
 
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
         @forelse($principles as $principle)
-        {{-- Card hover diubah ke maroon --}}
         <div class="card w-full sm:w-[356.67px] flex flex-col bg-white border border-gray-200 rounded-[20px] gap-[30px] overflow-hidden hover:border-maroon-primary transition-all duration-300">
             <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
                 <img src="{{Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
@@ -103,7 +95,6 @@
                     <p class="title font-bold text-xl leading-[30px]">{{$principle->name}}</p>
                     <p class="leading-[30px] text-gray-600">{{$principle->subtitle}}</p>
                 </div>
-                {{-- Link diubah ke maroon --}}
                 <a href="" class="font-semibold text-maroon-primary">Learn More</a>
             </div>
         </div>
@@ -113,17 +104,14 @@
     </div>
 </div>
 
-{{-- Stats: Latar belakang diubah ke maroon tua --}}
 <div id="Stats" class="bg-maroon-dark w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10 px-4">
         <div class="flex flex-wrap items-start justify-center md:justify-between p-[10px] gap-y-8">
             @forelse($statistics as $statistic)
             <div class="card w-1/2 md:w-[200px] flex flex-col items-center gap-[10px] text-center">
                 <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                    {{-- Asumsi ikon ini terlihat bagus di bg gelap. Jika tidak, Anda mungkin perlu ikon versi putih. --}}
                     <img src="{{Storage::url($statistic->icon)}}" class="object-contain w-full h-full" alt="icon">
                 </div>
-                {{-- Teks stats diubah ke putih agar kontras --}}
                 <p class="text-white font-bold text-3xl sm:text-4xl leading-[54px]">{{$statistic->goal}}</p>
                 <p class="text-gray-300 text-sm">{{$statistic->name}}</p>
             </div>
@@ -134,19 +122,16 @@
     </div>
 </div>
 
-{{-- Teams: Latar belakang abu-abu muda --}}
 <div id="Teams" class="bg-gray-50 w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center px-4">
         <div class="flex flex-col gap-[14px] items-center">
-            {{-- Badge diubah ke maroon --}}
+
             <p class="badge w-fit bg-maroon-primary text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
             <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px] text-center">We Share Same Dreams <br> Change The World</h2>
         </div>
         <div class="teams-card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] sm:gap-[30px] justify-center">
             @forelse ($teams as $team)
-            {{-- Card hover diubah ke maroon --}}
             <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[20px] sm:px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-maroon-primary transition-all duration-300">
-                {{-- Gradient diubah ke maroon --}}
                 <div class="w-[90px] h-[90px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#B91C1C_8.72%,_#800000_87.11%)]">
                     <div class="w-[80px] h-[80px] rounded-full overflow-hidden">
                         <img src="{{Storage::url($team->avatar)}}" class="object-cover w-full h-full object-center" alt="photo">
@@ -160,7 +145,6 @@
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
                     </div>
-                    {{-- Teks lokasi diubah ke maroon --}}
                     <p class="text-maroon-primary font-semibold text-sm">{{$team->location}}</p>
                 </div>
             </div>
@@ -182,10 +166,8 @@
     </div>
 </div>
 
-{{-- Testimonials: Latar belakang putih --}}
 <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
     <div class="flex flex-col gap-[14px] items-center px-4">
-        {{-- Badge diubah ke maroon muda --}}
         <p class="badge w-fit bg-maroon-light text-maroon-dark p-[8px_16px] rounded-full uppercase font-bold text-sm">Voice of Our Members</p>
         <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px] text-center">Inspirasi dan refleksi dari para kader Hima Persis yang terus bergerak dengan<br class="hidden lg:inline">Semangat keilmuan, progresivitas, dan semangat perubahan.</h2>
     </div>
@@ -228,61 +210,6 @@
     </div>
 </div>
 
-{{-- Awards: Latar belakang putih --}}
-<div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20 px-4">
-    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
-        <div class="flex flex-col gap-[14px]">
-            {{-- Badge diubah ke maroon muda --}}
-            <p class="badge w-fit bg-maroon-light text-maroon-dark p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
-            <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px]">We’ve Dedicated Our<br class="hidden sm:inline">Best Team Efforts</h2>
-        </div>
-        {{-- Tombol diubah ke maroon --}}
-        <a href="" class="bg-maroon-primary p-[14px_20px] w-fit rounded-xl font-bold text-white shrink-0 hover:opacity-90 transition-opacity duration-300">Explore More</a>
-    </div>
-    <div class="awards-card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] sm:gap-[30px] justify-center">
-        {{-- Card hover diubah ke maroon --}}
-        <div class="card bg-white flex flex-col h-full p-[20px] sm:p-[30px] gap-[20px] sm:gap-[30px] rounded-[20px] border border-gray-200 hover:border-maroon-primary transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                {{-- Ikon cup perlu diganti ke aset maroon jika ada, jika tidak, kita biarkan --}}
-                <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-                {{-- TODO: Jika Anda punya 'cup-red.svg', ganti src di atas --}}
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-base sm:text-xl leading-[25px] sm:leading-[30px]">Solid Fundamental Crafter Async</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-600 text-sm">Bali, 2020</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[20px] sm:p-[30px] gap-[20px] sm:gap-[30px] rounded-[20px] border border-gray-200 hover:border-maroon-primary transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-base sm:text-xl leading-[25px] sm:leading-[30px]">Most Crowded Yet Harmony Place</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-600 text-sm">Shanghai, 2021</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[20px] sm:p-[30px] gap-[20px] sm:gap-[30px] rounded-[20px] border border-gray-200 hover:border-maroon-primary transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-base sm:text-xl leading-[25px] sm:leading-[30px]">Small Things Made Much Big Impacts</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-600 text-sm">Zurich, 2022</p>
-        </div>
-        <div class="card bg-white flex flex-col h-full p-[20px] sm:p-[30px] gap-[20px] sm:gap-[30px] rounded-[20px] border border-gray-200 hover:border-maroon-primary transition-all duration-300">
-            <div class="w-[55px] h-[55px] flex shrink-0">
-                <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-            </div>
-            <hr class="border-gray-200">
-            <p class="font-bold text-base sm:text-xl leading-[25px] sm:leading-[30px]">Teamwork and Solidarity</p>
-            <hr class="border-gray-200">
-            <p class="text-gray-600 text-sm">Bandung, 2023</p>
-        </div>
-    </div>
-</div>
-
-{{-- FAQ: Latar belakang abu-abu muda --}}
 
 <div id="FAQ" class="bg-gray-50 w-full py-20 px-[10px] mt-20 mb-0">
     <div class="container max-w-[1000px] mx-auto px-4">
@@ -291,7 +218,6 @@
                 <div class="flex flex-col gap-[10px]">
                     <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px]">Frequently Asked Questions</h2>
                 </div>
-                {{-- Tombol diubah ke maroon --}}
                 <a href="contact.html" class="p-5 bg-maroon-primary rounded-xl text-white w-fit font-bold hover:opacity-90 transition-opacity duration-300">Contact Us</a>
             </div>
             <div class="flex flex-col gap-[30px] w-full sm:w-[603px] shrink-0">
@@ -362,7 +288,6 @@
 </div>
 
 
-{{-- Footer: Latar belakang diubah ke maroon tua --}}
 <footer class="bg-maroon-dark w-full relative overflow-hidden mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row flex-wrap gap-y-10 sm:gap-y-4 items-start sm:items-center justify-between pt-[50px] sm:pt-[100px] pb-[150px] sm:pb-[220px] relative z-10 px-4">
         <div class="flex flex-col gap-10 w-full sm:w-auto">
@@ -391,24 +316,13 @@
         <div class="flex flex-wrap justify-between w-full sm:w-auto gap-x-[30px] sm:gap-x-[50px] gap-y-8">
             <div class="flex flex-col w-[45%] sm:w-[200px] gap-3">
                 <p class="font-bold text-lg text-white">Products</p>
-                <!-- <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">General Contract</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Building Assessment</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">3D Paper Builder</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Legal Constructions</a> -->
             </div>
             <div class="flex flex-col w-[45%] sm:w-[200px] gap-3">
                 <p class="font-bold text-lg text-white">About</p>
-                <!-- <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">We’re Hiring</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Our Big Purposes</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Investor Relations</a> -->
                 <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Media Press</a>
             </div>
             <div class="flex flex-col w-[45%] sm:w-[200px] gap-3">
                 <p class="font-bold text-lg text-white">Useful Links</p>
-                <!-- <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Privacy & Policy</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Terms & Conditions</a>
-                <a href="contact.html" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Contact Us</a>
-                <a href="" class="text-gray-300 text-sm sm:text-base hover:text-white transition-all duration-300">Download Template</a> -->
             </div>
         </div>
     </div>

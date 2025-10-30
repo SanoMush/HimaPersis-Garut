@@ -5,7 +5,6 @@
         </div>
         <div class="flex flex-col">
             <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Hima Persis Garut</p>
-            {{-- Menggunakan warna abu-abu standar agar konsisten --}}
             <p id="CompanyTagline" class="text-sm text-gray-600">Ilmiah,Progresif,Revolusioner</p>
         </div>
     </div>
@@ -17,18 +16,16 @@
     </button>
 
     <ul class="hidden md:flex flex-wrap items-center gap-[30px]">
-        {{-- Menggunakan warna maroon untuk hover agar konsisten --}}
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
             <a href="{{ route('front.index') }}">Home</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
-            <a href="">Products</a> {{-- TODO: Tambahkan route jika ada --}}
+            <a href="">Project</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
             <a href="{{ route('front.team') }}">Organization</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
-            {{-- Menambahkan route blog --}}
             <a href="{{ route('front.blog') }}">Blog</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
@@ -62,28 +59,19 @@
 
         <div class="p-6 space-y-6">
             <a href="{{ route('front.index') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Home</a>
-            <a href="" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Products</a> {{-- TODO: Tambahkan route jika ada --}}
+            <a href="" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Products</a>
             <a href="{{ route('front.team') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Organization</a>
-            {{-- Menambahkan route blog --}}
             <a href="{{ route('front.blog') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Blog</a>
             <a href="{{ route('front.about') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">About</a>
-
             <div class="pt-4">
-                {{-- Menggunakan warna maroon untuk tombol --}}
-                <a href="" class="block bg-maroon-primary p-[14px_20px] text-center rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-white">Get a Quote</a> {{-- TODO: Tambahkan route jika ada --}}
+                <a href="" class="block bg-maroon-primary p-[14px_20px] text-center rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-white">Get a Quote</a>
             </div>
         </div>
     </div>
 </div>
 
-{{-- 
-    PENTING: Kode JavaScript ini sudah dimasukkan di sini 
-    agar komponennya berdiri sendiri (self-contained). 
-    Anda TIDAK perlu lagi menambahkannya ke app.blade.php.
---}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Hanya jalankan jika elemennya ada (mencegah error jika komponen ini tidak dipakai)
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -93,12 +81,9 @@
         const line3 = document.getElementById('line3');
 
         if (mobileMenuButton && mobileMenu && mobileMenuClose && mobileMenuBackdrop) {
-            // Open mobile menu
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-
-                // Animate hamburger to X
+                document.body.style.overflow = 'hidden';
                 if (line1 && line2 && line3) {
                     line1.style.transform = 'rotate(45deg) translate(4px, 4px)';
                     line2.style.opacity = '0';
@@ -106,12 +91,9 @@
                 }
             });
 
-            // Close mobile menu function
             function closeMobileMenu() {
                 mobileMenu.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
-
-                // Reset hamburger animation
+                document.body.style.overflow = '';
                 if (line1 && line2 && line3) {
                     line1.style.transform = 'rotate(0deg)';
                     line2.style.opacity = '1';
@@ -119,24 +101,18 @@
                 }
             }
 
-            // Close mobile menu events
             mobileMenuClose.addEventListener('click', closeMobileMenu);
             mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
 
-            // Close menu when clicking on navigation links
             const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', closeMobileMenu);
             });
-
-            // Handle window resize
             window.addEventListener('resize', function() {
-                if (window.innerWidth >= 768) { // md breakpoint Tailwind
+                if (window.innerWidth >= 768) {
                     closeMobileMenu();
                 }
             });
-
-            // Close mobile menu on escape key
             document.addEventListener('keydown', function(event) {
                 if (!mobileMenu.classList.contains('hidden') && event.key === 'Escape') {
                     closeMobileMenu();
