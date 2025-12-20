@@ -11,11 +11,13 @@ class Product extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable = [
-        'about',
-        'tagline',
-        'thumbnail',
-        'name',
-    ];
+    'name',
+    'slug', 
+    'tagline',
+    'about',
+    'thumbnail',
+    'price',
+];
 
     public function appointments(){
         return $this->hasMany(Appointment::class);

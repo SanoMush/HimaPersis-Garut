@@ -11,15 +11,13 @@ class StoreArticleRequest extends FormRequest
     }
 
     public function rules(): array
-    {
-    
-        return [
-            'title' => 'required|string|max:255',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'content' => 'required|string',
-            'author_name' => 'required|string|max:255', 
-            'pdf_file' => 'nullable|file|mimes:pdf|max:5120',
-            'pdf_file' => 'sometimes|file|mimes:pdf|max:5120',
-        ];
-    }
+{
+    return [
+        'title' => 'required|string|max:255',
+        'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        'content' => 'required|string',
+        'author_name' => 'required|string|max:255', 
+        'pdf_file' => 'nullable|file|mimes:pdf|max:5120', 
+    ];
+}
 }

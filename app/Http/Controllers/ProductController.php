@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -38,6 +39,8 @@ class ProductController extends Controller
 
         DB::transaction(function () use ($request){
             $validated = $request->validated();
+
+            $validated['slug'] = Str::slug($validated['name']) . '-' . uniqid();
 
             if($request->hasFile('thumbnail')){
                 $thumbnailPath = $request->file('thumbnail')->store('thumbnails','public');

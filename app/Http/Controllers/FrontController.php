@@ -39,12 +39,22 @@ class FrontController extends Controller
 
     public function blog()
     {
-        // Ambil semua artikel, urutkan terbaru, dan paginasi
+   
         $articles = Article::latest()->paginate(9); 
         return view('front.blog', compact('articles'));
     }
 
-    // UNTUK HALAMAN DETAIL (BACA 1 ARTIKEL)
+
+
+
+public function details(Product $product)
+{
+    // Mengambil project lain untuk bagian "Project Lainnya"
+    $other_products = Product::where('id', '!=', $product->id)->take(3)->get();
+
+    return view('front.details', compact('product', 'other_products'));
+}
+
     public function article_details($slug)
     {
         // Cari artikel berdasarkan slug-nya

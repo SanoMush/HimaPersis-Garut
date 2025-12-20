@@ -21,7 +21,9 @@ Route::get('/about',[FrontController::class, 'about'])->name('front.about');
 
 Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/blog/{slug}', [FrontController::class, 'article_details'])->name('front.article.details');
-
+Route::get('/project/{product:slug}', [FrontController::class, 'details'])->name('front.details');
+// Route untuk melihat semua project
+Route::get('/projects', [FrontController::class, 'projects'])->name('front.projects');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
