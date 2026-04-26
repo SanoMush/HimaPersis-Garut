@@ -24,7 +24,7 @@
     <div class="lg:w-1/3 flex flex-col gap-8">
         <h2 class="font-bold text-2xl">Project Lainnya</h2>
         <div class="flex flex-col gap-6">
-            @foreach($other_products as $other)
+            @foreach($other_projects as $other)
             <a href="{{ route('front.details', $other->slug) }}" class="flex items-center gap-4 group">
                 <img src="{{ Storage::url($other->thumbnail) }}" class="w-24 h-16 rounded-lg object-cover">
                 <span class="font-semibold group-hover:text-maroon-primary">{{ $other->name }}</span>

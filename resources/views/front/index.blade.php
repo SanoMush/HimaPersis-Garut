@@ -59,16 +59,6 @@
                 <img src="{{asset('assets/logo/stais.svg')}}" class="object-contain w-full h-full" alt="logo">
             </div>
         </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-gray-200 rounded-[18px] p-4 gap-[10px] bg-white hover:border-maroon-primary transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{asset('assets/logo/logo-55.svg')}}" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-gray-200 rounded-[18px] p-4 gap-[10px] bg-white hover:border-maroon-primary transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{asset('assets/logo/logo-52.svg')}}" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
     </div>
 </div>
 
@@ -78,24 +68,21 @@
             <p class="badge w-fit bg-maroon-light text-maroon-dark p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PROJECT</p>
             <h2 class="font-bold text-3xl sm:text-4xl leading-[40px] sm:leading-[45px]">Our Projects Rooted in Values<br class="hidden sm:inline"> Driven by Change </h2>
         </div>
-        <a href="" class="bg-maroon-primary p-[14px_20px] w-fit rounded-xl font-bold text-white shrink-0 hover:opacity-90 transition-opacity duration-300">Explore More</a>
+        <a href="{{ route('front.projects') }}" class="bg-maroon-primary p-[14px_20px] w-fit rounded-xl font-bold text-white shrink-0 hover:opacity-90 transition-opacity duration-300">Explore More</a>
     </div>
 
-    <div class="flex flex-wrap items-center gap-[30px] justify-center">
-        @forelse($principles as $principle)
-        <div class="card w-full sm:w-[356.67px] flex flex-col bg-white border border-gray-200 rounded-[20px] gap-[30px] overflow-hidden hover:border-maroon-primary transition-all duration-300">
+    <div class="projects-carousel w-full pb-10" data-flickity='{ "cellAlign": "left", "contain": true, "autoPlay": 4000, "prevNextButtons": false, "pageDots": true, "wrapAround": true }'>
+        @forelse($projects as $project)
+        <div class="card w-[90%] sm:w-[356.67px] mr-[30px] flex flex-col bg-white border border-gray-200 rounded-[20px] overflow-hidden hover:border-maroon-primary transition-all duration-300">
             <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-                <img src="{{Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
+                <img src="{{Storage::url($project->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
             </div>
-            <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-                <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                    <img src="{{Storage::url($principle->icon)}}" class="w-full h-full object-contain" alt="icon">
-                </div>
+            <div class="flex flex-col p-[30px] gap-5">
                 <div class="flex flex-col gap-1">
-                    <p class="title font-bold text-xl leading-[30px]">{{$principle->name}}</p>
-                    <p class="leading-[30px] text-gray-600">{{$principle->subtitle}}</p>
+                    <p class="title font-bold text-xl leading-[30px]">{{$project->name}}</p>
+                    <p class="leading-[30px] text-gray-600">{{$project->tagline}}</p>
                 </div>
-                <a href="" class="font-semibold text-maroon-primary">Learn More</a>
+                <a href="{{ route('front.details', $project->slug) }}" class="font-semibold text-maroon-primary w-fit hover:opacity-80 transition-all">Learn More</a>
             </div>
         </div>
         @empty
@@ -141,17 +128,11 @@
                     <p class="font-bold text-base sm:text-xl leading-[25px] sm:leading-[30px]">{{ $team->name }}</p>
                     <p class="text-gray-600 text-sm">{{$team->occupation}}</p>
                 </div>
-                <div class="flex items-center justify-center gap-[10px]">
-                    <div class="w-6 h-6 flex shrink-0">
-                        <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
-                    </div>
-                    <p class="text-maroon-primary font-semibold text-sm">{{$team->location}}</p>
-                </div>
             </div>
             @empty
             <p class="text-center py-5 w-full">Belum ada data terbaru</p>
             @endforelse
-            <a href="team.html" class="view-all-card">
+            <a href="{{ route('front.team') }}" class="view-all-card">
                 <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-maroon-primary transition-all duration-300">
                     <div class="w-[60px] h-[60px] flex shrink-0">
                         <img src="{{asset('assets/icons/profile-2user.svg')}}" alt="icon">

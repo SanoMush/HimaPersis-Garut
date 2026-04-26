@@ -20,7 +20,7 @@
             <a href="{{ route('front.index') }}">Home</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
-            <a href="">Project</a>
+            <a href="{{ route('front.projects') }}">Project</a>
         </li>
         <li class="font-semibold hover:text-maroon-primary transition-all duration-300">
             <a href="{{ route('front.team') }}">Organization</a>
@@ -59,12 +59,12 @@
 
         <div class="p-6 space-y-6">
             <a href="{{ route('front.index') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Home</a>
-            <a href="" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Products</a>
+            <a href="{{ route('front.projects') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Project</a>
             <a href="{{ route('front.team') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Organization</a>
             <a href="{{ route('front.blog') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">Blog</a>
             <a href="{{ route('front.about') }}" class="block font-semibold text-lg hover:text-maroon-primary transition-all duration-300 py-2">About</a>
             <div class="pt-4">
-                <a href="" class="block bg-maroon-primary p-[14px_20px] text-center rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-white">Get a Quote</a>
+                <a href="{{ route('dashboard') }}" class="block bg-maroon-primary p-[14px_20px] text-center rounded-xl hover:opacity-90 transition-all duration-300 font-bold text-white">Login Admin</a>
             </div>
         </div>
     </div>

@@ -20,10 +20,10 @@ class FrontController extends Controller
         $hero_sections= HeroSection::orderByDesc('id')->take(1)->get();
         $statistics = CompanyStatistic::take(4)->get();
         $principles= OurPrinciple::take(4)->get();
-        $products = Product::take(3)->get();
-        $teams = OurTeam::take(6)->get();
+        $projects = Product::latest()->get();
+        $teams = OurTeam::take(4)->get();
         $testimonials = Testimonial::take(6)->get();
-        return view('front.index', compact('statistics', 'principles', 'products' , 'teams', 'testimonials', 'hero_sections'));
+        return view('front.index', compact('statistics', 'principles', 'projects' , 'teams', 'testimonials', 'hero_sections'));
     }
 
     public function team(){
@@ -44,15 +44,19 @@ class FrontController extends Controller
         return view('front.blog', compact('articles'));
     }
 
-
+    public function projects()
+    {
+        $projects = Product::latest()->get();
+        return view('front.projects', compact('projects'));
+    }
 
 
 public function details(Product $product)
 {
     // Mengambil project lain untuk bagian "Project Lainnya"
-    $other_products = Product::where('id', '!=', $product->id)->take(3)->get();
+    $other_projects = Product::where('id', '!=', $product->id)->take(3)->get();
 
-    return view('front.details', compact('product', 'other_products'));
+    return view('front.details', compact('product', 'other_projects'));
 }
 
     public function article_details($slug)
